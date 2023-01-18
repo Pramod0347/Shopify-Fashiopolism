@@ -1,0 +1,64 @@
+{
+  "current": {
+    "body_text_color": "#121212",
+    "heading_text_color": "#121212",
+    "type_header_font": "neuzeit_office_n7",
+    "heading_scale": 100,
+    "type_body_font": "neuzeit_office_n4",
+    "body_scale": 100,
+    "page_width": 1460,
+    "spacing_grid_horizontal": 30,
+    "spacing_grid_vertical": 30,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement_bar": true,
+          "announcement_text": "<p>Worldwide free shipping on orders over $200<\/p>",
+          "announcement_text_color": "#ffffff",
+          "announcement_background_color": "#000000"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_image": "shopify:\/\/shop_images\/logo.webp",
+          "menu": "main-menu",
+          "menu_mobile": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+      "type_header_font": "din_next_n5",
+      "heading_scale": 100,
+      "type_body_font": "open_sans_n4",
+      "body_scale": 100,
+      "page_width": 1440,
+      "spacing_grid_horizontal": 15,
+      "spacing_grid_vertical": 15,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": ""
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .news-letter-{{ section.id}}{
+    background-color: {{ section.settings.background_color}};
+  }
+  .text-color-{{ section.id}}{
+    color: {{ section.settings.text_color}};
+  }
+  .btn-{{section.id}}{
+    background-color: {{ section.settings.button_background_color}};
+    color: {{ section.settings.button_text_color}};
+  }
+
+  .news-letter-input{
+    border-bottom: 1px solid #fff;
+    background-color:#2D2D2D;
+  }
+  .news-icon svg{
+    width: 40px;
+    height: 20px;
+    padding-right: 5px;
+  }
+
+  .news-icon svg path{
+        fill:#fff;
+    }
+{% endstyle %}
+
+<div class="news-letter section-{{ section.id }}-padding">
+  {% if section.settings.sub_heading != blank and section.settings.heading != blank %}
+    <div class="news-letter_content-main news-letter-{{section.id}} {{section.settings.text_alignment}}">
+      <div class="news-letter_content">
+        <div class="text-content flexbox-item">
+          <h4 class="mb-15 text-color-{{section.id}}">{{ section.settings.sub_heading }}</h4>
+          <div class="mb-20 text-color-{{section.id}}">{{ section.settings.heading }}</div>
+        </div>
+        <div class="form-content flexbox-item">
+          {% form 'customer' %}
+            <div class="email flex align-center mb-10 justify-center">
+              <input
+                class="news-letter-input btn"
+                placeholder="Enter your email"
+                type="email"
+                name="contact[email]"
+              >
+              <div class="submit">
+                <input
+                  class="button news-letter_button btn button--primary btn-{{section.id}}"
+                  type="submit"
+                  value="Join"
+                >
+              </div>
+            </div>
+          {% endform %}
+          <div class="news-icons flex">
+            <div class="news-icon">{% render 'icon', icon: 'facebook' %}</div>
+            <div class="news-icon">{% render 'icon', icon: 'twitter' %}</div>
+            <div class="news-icon">{% render 'icon', icon: 'pinterest' %}</div>
+            <div class="news-icon">{% render 'icon', icon: 'instagram' %}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "homepage-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+        "type": "header",
+        "content": "Button color settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Subheading",
+      "default": "Signup now"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color"
+    }, {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color"
+    },
+    {
+        "type": "header",
+        "content": "Text settings"
+      },{
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Signup for our newsletter to stay up to date on sales and events.</p>"
+    },
+    {
+        "type": "header",
+        "content": "Alignment settings"
+      },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        }, {
+          "value": "center",
+          "label": "Center"
+        }, {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

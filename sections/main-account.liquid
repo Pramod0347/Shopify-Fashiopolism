@@ -1,0 +1,40 @@
+<div class="page-width">
+  <h1>Welcome {{ customer.name }}</h1>
+
+  <h2>Account Details</h2>
+  <p>Email: {{ customer.email }}</p>
+  <p>Phone: {{ customer.phone }}</p>
+
+  <h2>Address</h2>
+  {% for address in customer.addresses %}
+    <p>{{ address.address1 }}</p>
+    <p>
+      {{ address.city }}, {{ address.province_code }}
+      {{ address.zip }}
+    </p>
+  {% endfor %}
+
+  <h2>Orders</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in customer.orders %}
+        <tr>
+          <td>
+            <a href="{{ order.url }}">{{ order.name }}</a>
+          </td>
+          <td>{{ order.created_at | date: '%b %d, %Y' }}</td>
+          <td>{{ order.total_price | money }}</td>
+          <td>{{ order.status }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

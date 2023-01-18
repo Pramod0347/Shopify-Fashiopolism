@@ -1,0 +1,99 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .header--{{ section.id }}{
+    background-color: {{ section.settings.header_background }}
+  }
+    .shopify-header-menu_links {
+        list-style: none;
+    }
+
+      .shopify-header-menu_links a{
+        list-style: none;
+        text-decoration: none;
+      }
+
+     body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sticky {
+      position: fixed;
+      z-index:1;
+      top: 0;
+      width: 100%
+  }
+{% endstyle %}
+
+<div class="header header--{{ section.id }}" id="myHeader">
+  <div class="header-menu page-width grid">
+    <div class="flex mobile__header-hamburger">
+      <div class="icon" onclick="hamburger()">
+        {% render 'icon', icon: 'hamburger' %}
+      </div>
+    </div>
+    <div class="logo_img">
+      <a href="/">
+        {%- render 'image', mobileSrc: section.settings.logo_image, desktopSrc: section.settings.logo_image -%}
+      </a>
+    </div>
+    <div class="shopify-header-menu" id="mobile-menu">
+      <ul>
+        {% for link in section.settings.menu.links %}
+          <li class="shopify-header-menu_links">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="cart-item">
+      <a href="{{ routes.search_url }}" class="cart-items">
+        {% render 'icon' with 'search' %}
+      </a>
+      <a href="{{ routes.account_url }}" class="cart-items">
+        {% render 'icon' with 'account' %}
+      </a>
+      <a href="{{ routes.cart_url }}" class="cart-items">
+        {% render 'icon' with 'cart' %}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "settings": [
+    {
+      "type": "color",
+      "id": "header_background",
+      "label": "Header color",
+      "default": "#ffffff"
+    },
+    {
+        "type": "header",
+        "content": "Image settings"
+      },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+        "type": "header",
+        "content": "Link settings"
+      },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }, {
+      "type": "link_list",
+      "id": "menu_mobile",
+      "label": "Menu mobile"
+    }
+  ]
+}
+{% endschema %}

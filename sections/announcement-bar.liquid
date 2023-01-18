@@ -1,0 +1,107 @@
+{% if section.settings.show_announcement_bar %}
+  {% if section.settings.announcement_text != blank %}
+    <div class="announcement announcement-{{ section.id }}">
+      <div class="announcement-menu flex justify-center page-width ">
+        <!--
+          <div class="announcement-icons flex align-center">
+            <div class="announcement-icon">{% render 'icon', icon: 'facebook' %}</div>
+            <div class="announcement-icon">{% render 'icon', icon: 'twitter' %}</div>
+            <div class="announcement-icon">{% render 'icon', icon: 'pinterest' %}</div>
+            <div class="announcement-icon">{% render 'icon', icon: 'instagram' %}</div>
+          </div>
+        -->
+        <div class="announcement_text text-{{ section.id }}">
+          {{ section.settings.announcement_text }}
+        </div>
+        <!-- <div class="announcement_country align-center  text-{{ section.id }}">India (Rupee ₹ )</div> -->
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+{% style %}
+    .announcement-{{ section.id }}{
+      background: {{ section.settings.announcement_background_color }};
+    }
+
+    .text-{{ section.id }}{
+      color: {{ section.settings.announcement_text_color}};
+    }
+
+
+  /*   .announcement-icon svg{
+      width: 30px;
+      height: 20px;
+      padding: 1.5px;
+    }
+
+      .announcement-icons{
+        display:none;
+      }
+
+    .announcement-icon svg path{
+          fill:#fff;
+  /*     }
+
+    .announcement_country{
+            display:none;
+    }
+
+    @media only screen and (min-width: 990px) {
+      .announcement-menu {
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .announcement-icons{
+        display:flex;
+      }
+
+      .announcement_country {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }*/
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Check box selection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement_bar",
+      "label": "Show announcement",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Text settings"
+    },
+    {
+      "type": "richtext",
+      "id": "announcement_text",
+      "info": "Navigation text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Color settings"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }, {
+      "type": "color",
+      "id": "announcement_background_color",
+      "label": "Background color",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}

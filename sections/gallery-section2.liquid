@@ -1,0 +1,125 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+  {% if section.blocks.size > 0 %}
+    <div class="image-gallery flex flex-wrap">
+      {% for block in section.blocks %}
+        {% if block.settings.image_desktop != blank and block.settings.image_mobile != blank %}
+          <div class="image-gallery__item flex__item">
+            <div class="image-gallery__image-item">
+              {% render 'image',
+                class: 'media media--square media--animated',
+                mobileSrc: block.settings.image_mobile,
+                desktopSrc: block.settings.image_desktop
+              %}
+            </div>
+
+            <div class="center flex justify-center image-gallery__text-item">
+              {% if block.settings.heading_text != blank %}
+                <div class="h2 mb-10 image-gallery__item__heading">
+                  {{ block.settings.heading_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.subheading_text != blank %}
+                <div class="mb-10 item__subheading_text">
+                  {{ block.settings.subheading_text }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.btn_text != blank %}
+                <a class="button button--primary" href="{{ block.settings.btn_link }}">
+                  {{- block.settings.btn_text -}}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Gallery section 2",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 36
+      }
+
+  ],
+  "blocks": [
+    {
+      "name": "Image Gallery Item",
+      "type": "image-gallery-item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Picker (Desktop)"
+        },{
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Picker (Mobile)"
+        },{
+          "type": "text",
+          "id": "heading_text",
+          "label": "Heading Text",
+          "default": "Best Seller"
+        },{
+          "type": "text",
+          "id": "subheading_text",
+          "label": "Sub-Heading Text"
+        },{
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },{
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Gallery section 2"
+    }
+  ]
+
+}
+{% endschema %}

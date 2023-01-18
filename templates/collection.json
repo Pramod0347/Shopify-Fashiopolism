@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "banner": {
+      "type": "collection-banner",
+      "settings": {
+      }
+    },
+    "58d6a1cc-bcf0-433f-bd05-17424c10722d": {
+      "type": "image-richtext-collection",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_desktop": "shopify:\/\/shop_images\/sale.jpg",
+        "heading_text": "SALE now on",
+        "heading_text_color": "#af0000",
+        "paragraph_text": "<p>Shop our mid Season sale for a range of discounted items<\/p>",
+        "button_text": "Shop sale",
+        "button_link": "shopify:\/\/collections\/tops",
+        "button_text_color": "#ffffff",
+        "button_background_color": "#af0000",
+        "text_alignment": "text-left",
+        "text_position": "justify-center"
+      }
+    },
+    "main": {
+      "type": "main-collection-template",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "product_per_page": 24
+      }
+    },
+    "a5fee175-3f70-406b-9993-243d3e4ce2c6": {
+      "type": "image-gallery-collection",
+      "blocks": {
+        "0fab6bec-ef29-42c2-a694-8adee9431ea8": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/I.webp",
+            "image_link": "",
+            "heading_text": "NEW ARRIVALS",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#ffffff",
+            "button_text": "SHOP NOW",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "1a83661c-f5bc-4664-877b-9a036de16575": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gallry-image2.webp",
+            "image_link": "",
+            "heading_text": "DRESSES",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "SHOP NOW",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "de81bd21-f6ec-457c-809e-54ecccb06a3d": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gallry-image1.webp",
+            "image_link": "",
+            "heading_text": "ACCESSORIES",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#ffffff",
+            "button_text": "SHOP NOW",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "0fab6bec-ef29-42c2-a694-8adee9431ea8",
+        "1a83661c-f5bc-4664-877b-9a036de16575",
+        "de81bd21-f6ec-457c-809e-54ecccb06a3d"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "21d1f9b6-8acf-4473-b00d-c552508d4dae": {
+      "type": "news-letter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "sub_heading": "GET IN THE KNOW",
+        "button_background_color": "#2d2d2d",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Signup for our newsletter to stay up to date on sales and events.<\/p>",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "58d6a1cc-bcf0-433f-bd05-17424c10722d",
+    "main",
+    "a5fee175-3f70-406b-9993-243d3e4ce2c6",
+    "21d1f9b6-8acf-4473-b00d-c552508d4dae"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+      }
+    },
+    "47ad8a55-5fe0-48c8-8d90-1121829e4b97": {
+      "type": "news-letter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "sub_heading": "GET IN THE KNOW",
+        "button_background_color": "#2d2d2d",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Signup for our newsletter to stay up to date on sales and events.<\/p>",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "47ad8a55-5fe0-48c8-8d90-1121829e4b97"
+  ]
+}

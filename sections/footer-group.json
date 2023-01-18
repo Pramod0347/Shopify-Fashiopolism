@@ -1,0 +1,45 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "47e81b88-1fa2-49d8-9030-d35bdde8468c": {
+          "type": "footer-links",
+          "settings": {
+            "links_heading": "THEME DEMOS",
+            "footer_links": "theme-demos"
+          }
+        },
+        "3a1e70bc-7fda-4d8c-84e5-584a97c2f560": {
+          "type": "footer-links",
+          "settings": {
+            "links_heading": "RECENT POSTS",
+            "footer_links": "recent-posts"
+          }
+        },
+        "b6ac2d36-0107-4fdc-a71c-b3799f41a0e5": {
+          "type": "text-section",
+          "settings": {
+            "text_section_heading": "About",
+            "text_section_content_1": "<p>Since 2007 We are Underground have been building Shopify themes for merchants around the globe.<\/p>",
+            "text_section_content_2": "<p>Each theme includes <strong>Free<\/strong> support and <strong>Free<\/strong> updates.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "47e81b88-1fa2-49d8-9030-d35bdde8468c",
+        "3a1e70bc-7fda-4d8c-84e5-584a97c2f560",
+        "b6ac2d36-0107-4fdc-a71c-b3799f41a0e5"
+      ],
+      "settings": {
+        "footer_background_color": "#ffffff",
+        "footer_text_color": "#121212"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

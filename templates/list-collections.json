@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "fb6c5d3a-75ff-4e0e-826b-5ecc34cca062": {
+      "type": "image-richtext-collection",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "image_desktop": "shopify:\/\/shop_images\/playsuits-jumpsuits.webp",
+        "heading_text": "OUR PROMISE",
+        "heading_text_color": "#FFFFFF",
+        "paragraph_text": "<p>FIND YOUR LOOK IN OUR CAREFULLY CURATED COLLECTIONS<\/p>",
+        "button_text": "Shop Now",
+        "button_link": "",
+        "button_text_color": "#111111",
+        "button_background_color": "#FFFFFF",
+        "text_alignment": "text-center",
+        "text_position": "justify-center"
+      }
+    },
+    "main": {
+      "type": "main-collections",
+      "settings": {
+      }
+    },
+    "e83207eb-3561-465d-82a2-6eb7ad5690a7": {
+      "type": "news-letter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "sub_heading": "GET IN THE KNOW",
+        "button_background_color": "#2d2d2d",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Signup for our newsletter to stay up to date on sales and events.<\/p>",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "fb6c5d3a-75ff-4e0e-826b-5ecc34cca062",
+    "main",
+    "e83207eb-3561-465d-82a2-6eb7ad5690a7"
+  ]
+}

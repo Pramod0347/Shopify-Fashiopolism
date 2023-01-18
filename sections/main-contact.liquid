@@ -1,0 +1,33 @@
+<div class="contact-form center flex page-width justify-center flex-column">
+  <div class="contact-form_head flex justify-center h2 mb-20">CONTACT US</div>
+  {% form 'contact' %}
+    {{ form.errors | default_errors }}
+    <div class="first-name main-content_customer">
+      <input type="text" name="contact[first_name]" id="first-name" placeholder="First name">
+    </div>
+
+    <div class="last-name main-content_customer">
+      <input type="text" name="contact[last_name]" id="last-name" placeholder="Last name">
+    </div>
+
+    <div class="phone main-content_customer">
+      <input type="tel" name="contact[phone]" id="phone" placeholder="Phone number">
+    </div>
+
+    <div class="email main-content_customer">
+      <input type="email" name="contact[email]" id="email" placeholder="Email">
+    </div>
+
+    <div class="order-number main-content_customer">
+      <input type="text" name="contact[order_number]" id="order-number" placeholder="Order number">
+    </div>
+
+    <div class="message main-content_customer">
+      <textarea name="contact[body]" id="message" placeholder="Message"></textarea>
+    </div>
+
+    <div class="submit main-content_customer">
+      <input type="submit" class="button button--primary " value="Create">
+    </div>
+  {% endform %}
+</div>

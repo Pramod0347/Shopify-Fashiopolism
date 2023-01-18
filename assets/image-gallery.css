@@ -1,0 +1,33 @@
+/* IMAGE GALLERY */
+.image-gallery__item {
+  display: block;
+  position: relative;
+}
+
+.image-gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+.image-item__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.image-gallery .image-text__button {
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 749px) {
+  .image-gallery .grid {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  .image-gallery .grid__item {
+    width: 85%;
+  }
+}

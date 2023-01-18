@@ -1,0 +1,65 @@
+/*---------------------------------------------------HEADER-----------------------------------------------*/
+.header {
+      top: 0;
+      padding: 1.5% 3%;
+    }
+    .shopify-header-menu {
+      display: none;
+    }
+    .shopify-header-menu li a {
+      color: #000000;
+    }
+    .logo_img {
+      max-width: 220px;
+      height: 100%;
+      position: relative;
+      left: 8%;
+    }
+    .cart-item {
+      display: none;
+    }
+
+  .mobile__header-hamburger{
+       margin-top:3px;
+     }
+
+
+
+    @media only screen and (min-width: 990px) {
+      .mobile__header-hamburger{
+       display:none;
+     }
+      .header-menu {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+      .shopify-header-menu {
+        display: flex;
+      }
+      .shopify-header-menu ul {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .shopify-header-menu li a {
+        padding: 20px;
+      }
+      .cart-item {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .cart-items {
+        margin-left:5px
+      }
+      .cart-item svg {
+        float: right;
+        height: 100%;
+        width: 70%;
+      }
+      .logo_img{
+        left:0;
+      }
+    }

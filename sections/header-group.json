@@ -1,0 +1,27 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "show_announcement_bar": true,
+        "announcement_text": "<p>Free delivery on orders over $100<\/p>",
+        "announcement_text_color": "#ffffff",
+        "announcement_background_color": "#121212"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_image": "shopify:\/\/shop_images\/logo_f65094ba-d870-493e-a486-8d61e17eec82.webp",
+        "menu": "fashionpolism",
+        "menu_mobile": ""
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

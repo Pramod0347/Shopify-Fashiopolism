@@ -1,0 +1,28 @@
+{% style %}
+  .search-content{
+    flex-direction:column;
+  }
+{% endstyle %}
+
+<div class="search-content page-width flex justify-center">
+  <div class="search-content-form flex justify-center mb-20">
+    <form action="/search" method="get">
+      <input type="text" name="q" placeholder="Search our store">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  <div class="search-results flex justify-between">
+    {% for product in search.results %}
+      <div>
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+          <h2>{{ product.title }}</h2>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+    {% if search.results.size == 0 %}
+      <p>No results found for "{{ search.query }}"</p>
+    {% endif %}
+  </div>
+</div>

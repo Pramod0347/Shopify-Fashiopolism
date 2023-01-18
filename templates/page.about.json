@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "main": {
+      "type": "about-page",
+      "settings": {
+      }
+    },
+    "4564da98-defd-4756-bf5b-36023b6d6cd7": {
+      "type": "image-richtext-collection",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_desktop": "shopify:\/\/shop_images\/img-main.webp",
+        "heading_text": "OUR PROMISE",
+        "heading_text_color": "#ffffff",
+        "paragraph_text": "<p>FIND YOUR LOOK IN OUR CAREFULLY CURATED COLLECTIONS<\/p>",
+        "button_text": "Shop Now",
+        "button_link": "",
+        "button_text_color": "#111111",
+        "button_background_color": "#ffffff",
+        "text_alignment": "text-center",
+        "text_position": "justify-center"
+      }
+    },
+    "e5c37676-c8af-4c6b-84e8-6552ddd681fe": {
+      "type": "image-gallery-collection",
+      "blocks": {
+        "d7f92d43-7afd-4d5d-89b5-219661dcc3d1": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/header2.webp",
+            "image_link": "",
+            "heading_text": "",
+            "heading_text_color": "#111111",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "",
+            "button_text_color": "#111111",
+            "button_background_color": "#ffffff",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "d534f422-bcbf-4e10-9637-ace2c640f36a": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/main.webp",
+            "image_link": "",
+            "heading_text": "",
+            "heading_text_color": "#111111",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "",
+            "button_text_color": "#111111",
+            "button_background_color": "#ffffff",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "a6c77196-395c-493a-a093-65f78e1b3d02": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/01.webp",
+            "image_link": "",
+            "heading_text": "",
+            "heading_text_color": "#111111",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "",
+            "button_text_color": "#111111",
+            "button_background_color": "#ffffff",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "d7f92d43-7afd-4d5d-89b5-219661dcc3d1",
+        "d534f422-bcbf-4e10-9637-ace2c640f36a",
+        "a6c77196-395c-493a-a093-65f78e1b3d02"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "079b541f-ea4e-4778-b3bb-a347cbff6103": {
+      "type": "richtext-section",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "section_background": "#dadada",
+        "heading_text": "About",
+        "paragraph_text": "<p>Over the past months, we know you have put up with us asking questions about your shopping habits, answered surveys about where else you like to buy and what you like and dislike about our website. Well, we listened and think that we came up with something perfect that will make us your favorite online shopping destination.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "text_alignment": "text-center"
+      }
+    },
+    "02714507-bbfc-4c1c-aa06-a876bea81c49": {
+      "type": "collection-list-section",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "background_color": "",
+        "heading_text": "COLLECTIONS",
+        "heading_color": "",
+        "button_text": "",
+        "button_url": "",
+        "button_color": "",
+        "collection_list": [
+          "tops",
+          "sale",
+          "hello",
+          "dresses"
+        ]
+      }
+    },
+    "3f65d5c2-7974-4d83-9688-52c2a2562a56": {
+      "type": "image-richext-section",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_desktop": "shopify:\/\/shop_images\/img.webp",
+        "heading_text": "OUR PROMISE",
+        "heading_text_color": "#ffffff",
+        "paragraph_text": "",
+        "button_text": "Button Text",
+        "button_link": "",
+        "text_alignment": "text-center",
+        "text_position": "justify-center"
+      }
+    },
+    "eab9d186-b1f8-4069-b80e-d44b8a614c53": {
+      "type": "blog-post-section",
+      "settings": {
+        "blog": "news"
+      }
+    },
+    "5fa17a2c-8331-48f2-8837-d597c58834e0": {
+      "type": "news-letter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "sub_heading": "GET IN THE KNOW",
+        "button_background_color": "#2d2d2d",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Signup for our newsletter to stay up to date on sales and events.<\/p>",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "4564da98-defd-4756-bf5b-36023b6d6cd7",
+    "e5c37676-c8af-4c6b-84e8-6552ddd681fe",
+    "079b541f-ea4e-4778-b3bb-a347cbff6103",
+    "02714507-bbfc-4c1c-aa06-a876bea81c49",
+    "3f65d5c2-7974-4d83-9688-52c2a2562a56",
+    "eab9d186-b1f8-4069-b80e-d44b8a614c53",
+    "5fa17a2c-8331-48f2-8837-d597c58834e0"
+  ]
+}

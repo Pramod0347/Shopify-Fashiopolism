@@ -1,0 +1,147 @@
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .background-{{ section.id }}{
+      background: {{ section.settings.background_color}};
+    }
+    .heading-color-{{ section.id }}{
+    color: {{ section.settings.heading_color }};
+  }
+  .button-color-{{ section.id }}{
+    color: {{ section.settings.button_color }};
+  }
+{% endstyle %}
+
+<div class="collection-list section-{{ section.id }}-padding">
+  <div class="collection-list background-{{ section.id }}">
+    <div class="page-width">
+      <div class="collection-list--header flex justify-center heading-color-{{ section.id }}">
+        {% if section.settings.heading_text != blank %}
+          <h4 class="mb-30">
+            {{ section.settings.heading_text }}
+          </h4>
+        {% endif %}
+        {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+          <div>
+            <a class="link button-color-{{ section.id }}" href="{{ section.settings.button_url }}">
+              {{- section.settings.button_text -}}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.settings.collection_list != blank %}
+        <div class="grid grid--2-col grid--4-col-desktop">
+          {% for collection in section.settings.collection_list %}
+            <div class="grid__item">
+              {% render 'collection-card-section', collection: collection %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection list",
+  "class": "homepage-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Color settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background"
+    },
+    {
+      "type": "header",
+      "content": "Heading Text settings"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    }, {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }, {
+      "type": "header",
+      "content": "Button color settings"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color"
+    },
+    {
+      "type": "header",
+      "content": "Collection settings"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections",
+      "limit": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,204 @@
+<product-card class="product-card" data-handle="{{ product.handle }}">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+  {%- assign form_id = 'Form-' | append: section.id | append: product.id -%}
+
+  <a href="{{ product.url }}" class="product-card__link">
+    <img
+      src="{{ featured_image | image_url: width: 1500 }}"
+      loading="lazy"
+      width="{{ featured_image.width }}"
+      height="{{ featured_image.width | divided_by: featured_image.aspect_ratio | round }}"
+      alt="{{ alt | default: featured_image.alt | escape }}"
+    >
+  </a>
+  {%- for tag in product.tags -%}
+    <div class="product__badges flex">
+      {%- if tag contains 'badge__' -%}
+        <div>
+          {%- assign badgeText = tag | split: '__' | last -%}
+          <div class="product__badge">{{ badgeText | upcase }}</div>
+        </div>
+      {%- endif -%}
+
+      {% if current_variant.compare_at_price > current_variant.price and current_variant.available %}
+        <div>
+          <span class="product__badge">ON SALE</span>
+        </div>
+      {% endif %}
+    </div>
+  {%- endfor -%}
+
+  <div class="product-card__meta">
+    <div>
+      <a class="center flex justify-center product-title" href="{{ product.url }}">{{ product.title }}</a>
+    </div>
+
+    <div class="product-card__prices flex justify-center">
+      <div class="product-card__price">{{ current_variant.price | money_without_trailing_zeros }}</div>
+
+      {% if current_variant.compare_at_price > current_variant.price %}
+        <div class="product-card__compareprice">
+          {{ current_variant.compare_at_price | money_without_trailing_zeros }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="product-card__form">
+    {%- form 'product', product -%}
+      <input
+        type="hidden"
+        name="quantity"
+        value="1"
+      >
+      <select name="id" class="hidden">
+        {% for variant in product.variants %}
+          <option
+            value="{{ variant.id }}"
+            {% if variant.id == current_variant.id %}
+              selected
+            {% endif %}
+          >
+            {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+
+      {% unless product.has_only_default_variant %}
+        {%- for option in product.options_with_values -%}
+          <div class="product-card__options">
+            <!-- <label class="product-card__options--label h5">{{ option.name }}</label> -->
+
+            <div class="product-card__options--swatches flex mb-10 justify-center flex-wrap align-center">
+              {%- for value in option.values -%}
+                <div class="product-card__options--swatch swatch-{{ option.name | handleize }}">
+                  <input
+                    hidden
+                    type="radio"
+                    id="{{ section.id }}-{{ product.id }}-{{ value }}"
+                    name="{{ option.name }}"
+                    value="{{ value | escape }}"
+                    {% if option.selected_value == value %}
+                      checked
+                    {% endif %}
+                  >
+                  {% if option.name == 'Color' %}
+                    <label
+                      for="{{ section.id }}-{{ product.id }}-{{ value }}"
+                      style="background-color: {{ value | handleize }}; background-image: url({{ value | handleize | append: '.png' | file_img_url }})"
+                    ></label>
+                  {% else %}
+                    <label for="{{ section.id }}-{{ product.id }}-{{ value }}">
+                      {{ value }}
+                    </label>
+                  {% endif %}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {% endunless %}
+    {%- endform -%}
+  </div>
+  <div class="product-card__button center">
+    {% if current_variant.available %}
+      <button type="submit" class="button button--primary button--full-width card_button">Add to cart</button>
+    {% else %}
+      <button
+        type="button"
+        class="button button--primary button--full-width"
+        disabled
+      >
+        Soldout
+      </button>
+    {% endif %}
+  </div>
+
+  <script type="application/json">
+    {{ product.variants | json }}
+  </script>
+</product-card>
+
+{% style %}
+  .product-title {
+  	text-decoration: none;
+    color: #000;
+  }
+
+  .product-card {
+  	height: 100%;
+  	display: block;
+  	position: relative;
+  }
+
+  .product-card__link {
+  	display: block;
+  	margin-bottom: 1.5rem;
+  }
+
+  .product__badges {
+  	position: absolute;
+  	top: 1.5%;
+    left:3%;
+  	width: 100%;
+  }
+
+  .product__badge {
+  	color: #000;
+  	padding: 4px 15px;
+  	margin: 0 5px 10px 0;
+  	font-weight: 600;
+  	font-size: 11px;
+  	display: inline-block;
+    background: #fff;
+  }
+
+
+
+  .product-card__price {
+  	padding-right: 10px;
+  }
+
+  .product-card__compareprice {
+  	text-decoration: line-through;
+  }
+
+  .product-card__form,
+  .product-card__meta {
+  	margin-bottom: 2rem;
+  }
+
+  .product-card__button .button {
+  	width: 100%;
+  }
+
+  .product-card__options--swatch label {
+  	height: 30px;
+  	min-width: 40px;
+  	border: 1px solid;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	margin: 5px 5px 5px 0;
+  	cursor: pointer;
+  	transition: 0.3s all ease;
+  }
+
+  .product-card__options--swatch.swatch-color label {
+  	width: 30px;
+  	min-width: 30px;
+  	border-radius: 50%;
+  	border: 2px solid grey;
+  	transition: 0.1s all ease-out;
+  }
+
+  .product-card__options--swatch.swatch-color input:checked~label {
+  	border: 3px solid #000;
+  }
+
+  .product-card__options--swatch.swatch-size input:checked~label {
+  	background: #000;
+  	color: #fff;
+  }
+{% endstyle %}

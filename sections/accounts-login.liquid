@@ -1,0 +1,31 @@
+<div class="page-width flex justify-center center flex-column">
+  {% form 'customer_login', return_to: routes.all_products_collection_url %}
+    {{ form.errors | default_errors }}
+    <div>
+      <h2 class="mb-20">CUSTOMER LOGIN</h2>
+      <div class="email main-content_customer">
+        <input type="email" name="customer[email]" placeholder="Email">
+      </div>
+
+      <div class="password main-content_customer">
+        <input type="password" name="customer[password]" placeholder="Password">
+      </div>
+
+      <div class="submit main-content_customer">
+        <input type="submit" class="button button--primary main-content_customer" value="Sign in">
+      </div>
+    </div>
+  {% endform %}
+  <div>
+    {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+        <a href="{{ routes.account_url }}">Account</a>
+      {% else %}
+        {% if shop.customer_accounts_optional %}
+          <span>or</span>
+          <a href="{{ routes.account_register_url }}">Create an account</a>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

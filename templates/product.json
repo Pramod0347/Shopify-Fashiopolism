@@ -1,0 +1,220 @@
+{
+  "sections": {
+    "main": {
+      "type": "marmeto-product-template",
+      "blocks": {
+        "08c64266-5a39-4c8c-98d5-ee8e15de1adf": {
+          "type": "badge",
+          "settings": {
+          }
+        },
+        "c5941aa2-fc79-4a49-bcc1-d4a00fa19134": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "9e1bb30a-bc32-455d-ae0f-c201c7614d5f": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "7de74f69-20c8-4f38-a145-0f8d76f419de": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "9d3bf23c-3b52-4fba-a110-88be152fe0b8": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#000000",
+            "star_size": 15,
+            "text_align": "flex-start",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
+          }
+        },
+        "100450b7-abf1-42ed-9ebb-a03d74be9641": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "d2af0ae5-cdaf-4545-854e-fea82eeab216": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
+        "a99d1a03-2e3f-4ac1-a70f-cdfc8ed03945": {
+          "type": "pincode",
+          "settings": {
+          }
+        },
+        "89a865f8-7112-4a46-84ec-d74b8376528f": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "dc0dd0a6-e156-4899-89aa-79aa5cc51af8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DETAILS",
+            "content": "<ul><li>Midi dress<\/li><li>Asymmetrical ruffle<\/li><li>Adjustable shoulder straps<\/li><li>Elasticated waist with detachable waist tie<\/li><li>Keyhole at back<\/li><li>Unlined<\/li><\/ul><p><strong>Garment Care<\/strong><\/p><ul><li>100% Rayon<\/li><li>Cold gentle hand wash<\/li><\/ul><p>Model's height is 168cm<\/p><p>All products in this store can be purchased from <a href=\"https:\/\/www.elleandandi.com\/\" target=\"_blank\" title=\"Austrailian womens Fashion\"><strong>Elle and Andi<\/strong><\/a><\/p><p><\/p>",
+            "page": ""
+          }
+        },
+        "feed10f6-fb5e-42ed-b27e-2bf5be4d0180": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "RETURNS",
+            "content": "<p><strong>Free<\/strong> Returns on all items if returned unworn in original packing including all labels.<\/p><p>We regret that we can not accept returns on items that have been used.<\/p><p>If you are unhappy with your purchase or would like to return item, contact us and we will arrange pickup at our cost.<\/p>",
+            "page": ""
+          }
+        },
+        "7b8b0b7c-5c6f-459d-bc61-81cf0ad3fe0a": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SHIPPING",
+            "content": "<p>We offer free 3 day shipping on all products.<br\/>Next day shipping is available at an additional cost and may be calculated at checkout.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "08c64266-5a39-4c8c-98d5-ee8e15de1adf",
+        "c5941aa2-fc79-4a49-bcc1-d4a00fa19134",
+        "9e1bb30a-bc32-455d-ae0f-c201c7614d5f",
+        "7de74f69-20c8-4f38-a145-0f8d76f419de",
+        "9d3bf23c-3b52-4fba-a110-88be152fe0b8",
+        "100450b7-abf1-42ed-9ebb-a03d74be9641",
+        "d2af0ae5-cdaf-4545-854e-fea82eeab216",
+        "a99d1a03-2e3f-4ac1-a70f-cdfc8ed03945",
+        "89a865f8-7112-4a46-84ec-d74b8376528f",
+        "dc0dd0a6-e156-4899-89aa-79aa5cc51af8",
+        "feed10f6-fb5e-42ed-b27e-2bf5be4d0180",
+        "7b8b0b7c-5c6f-459d-bc61-81cf0ad3fe0a"
+      ],
+      "settings": {
+      }
+    },
+    "167369572009e73370": {
+      "type": "apps",
+      "blocks": {
+        "e6fab50d-68c2-4f04-98d3-f2ad6464e08d": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "e6fab50d-68c2-4f04-98d3-f2ad6464e08d"
+      ],
+      "settings": {
+      }
+    },
+    "product-recommendations": {
+      "type": "marmeto-product-recommendations",
+      "settings": {
+        "enable_product_recommendations": true,
+        "title": "You may also like"
+      }
+    },
+    "recently-viewed-products": {
+      "type": "marmeto-recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed"
+      }
+    },
+    "product-upsell": {
+      "type": "marmeto-upsell",
+      "settings": {
+        "enable_product_upselling": true,
+        "title": "Upsell Products"
+      }
+    },
+    "30420743-5459-4160-bf04-ef4b09d4654c": {
+      "type": "image-gallery-collection",
+      "blocks": {
+        "a286470b-a77d-4d1f-bb85-856bad0ff5ca": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slider1_b64c7bc5-6c40-429b-8a35-7d74ad80bb82.webp",
+            "image_link": "",
+            "heading_text": "DRESSES",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#ffffff",
+            "button_text": "Shop Now",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "38dfa2a1-fca7-4f42-b695-5256d0fc10d7": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gallry-image1.webp",
+            "image_link": "",
+            "heading_text": "LATEST DROP",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "Shop Now",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "c6f4b69b-09a6-4125-a8c7-f541e49537a6": {
+          "type": "image-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gallry-image2.webp",
+            "image_link": "",
+            "heading_text": "ACCESSORIES",
+            "heading_text_color": "#ffffff",
+            "paragraph_text": "",
+            "paragraph_text_color": "#111111",
+            "button_text": "Shop Now",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#121212",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "a286470b-a77d-4d1f-bb85-856bad0ff5ca",
+        "38dfa2a1-fca7-4f42-b695-5256d0fc10d7",
+        "c6f4b69b-09a6-4125-a8c7-f541e49537a6"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "f8dad127-4af3-4308-964a-c9c97830045c": {
+      "type": "news-letter",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "background_color": "#2d2d2d",
+        "text_color": "#ffffff",
+        "sub_heading": "GET IN THE KNOW",
+        "button_background_color": "#2d2d2d",
+        "button_text_color": "#ffffff",
+        "heading": "<p>Signup for our newsletter to stay up to date on sales and events.<\/p>",
+        "text_alignment": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "167369572009e73370",
+    "product-recommendations",
+    "recently-viewed-products",
+    "product-upsell",
+    "30420743-5459-4160-bf04-ef4b09d4654c",
+    "f8dad127-4af3-4308-964a-c9c97830045c"
+  ]
+}

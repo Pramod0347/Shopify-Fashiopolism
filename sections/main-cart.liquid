@@ -1,0 +1,44 @@
+{% style %}
+  .cart-container-amount{
+    flex-direction:column;
+    padding:10px;
+  }
+{% endstyle %}
+
+<div class="cart-container page-width">
+  <div class="cart-header flex center mb-20">
+    <h3>Shopping Cart</h3>
+  </div>
+  <div class="cart-container-items grid grid--2-col grid--4-col-desktop">
+    {% for item in cart.items %}
+      <div class="cart-container-item grid__item">
+        <div class="cart-container-item-image">
+          <!-- <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}"> -->
+          <img
+            src="{{ item.image | image_url: width: 1500 }}"
+            loading="lazy"
+            width="{{ item.title.width }}"
+            height="{{ item.title.width | divided_by: item.title.aspect_ratio | round }}"
+            alt="{{ alt | default: item.title | escape }}"
+          >
+        </div>
+        <div class="cart-container-item-info">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.quantity }} x {{ item.price | money }}</p>
+        </div>
+        <div class="cart-container-item-remove">
+          <a href="{{ item.remove_url }}">Remove</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="cart-container-amount flex center justify-center">
+    <div class="cart-container-total ">
+      <h2>Total: {{ cart.total_price | money }}</h2>
+    </div>
+    <div class="cart-container-buttons">
+      <a href="{{ routes.cart_url }}" class="cart-button button button--secondary">View Cart</a>
+      <a href="{{ routes.checkout_url }}" class="cart-button button button--primary">Checkout</a>
+    </div>
+  </div>
+</div>

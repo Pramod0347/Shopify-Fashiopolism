@@ -1,0 +1,25 @@
+<div class="page-width flex justify-center">
+  {% form 'create_customer', return_to: routes.all_products_collection_url %}
+    {{ form.errors | default_errors }}
+    <h2 class="mb-20">CUSTOMER DETAILS</h2>
+    <div class="first-name main-content_customer">
+      <input type="text" name="customer[first_name]" placeholder="First name">
+    </div>
+
+    <div class="last-name main-content_customer">
+      <input type="text" name="customer[last_name]" placeholder="Last name">
+    </div>
+
+    <div class="email main-content_customer">
+      <input type="email" name="customer[email]" placeholder="Email">
+    </div>
+
+    <div class="password main-content_customer">
+      <input type="password" name="customer[password]" placeholder="Password">
+    </div>
+
+    <div class="submit main-content_customer">
+      <input type="submit" value="Create" placeholder="Submit">
+    </div>
+  {% endform %}
+</div>
