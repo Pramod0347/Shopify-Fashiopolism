@@ -19,7 +19,6 @@
           <p>{{ item.quantity }} x {{ item.price | money }}</p>
         </div>
         <div class="quantity__flex">
-          <button class="quantity__button" name="minus" type="button">-</button>
           <input
             class="quantity__input"
             type="number"
@@ -27,7 +26,6 @@
             min="1"
             value="1"
           >
-          <button class="quantity__button" name="plus" type="button">+</button>
         </div>
         <div class="cart-container-item-remove">
           <a href="{{ item.remove_url }}">Remove</a>
