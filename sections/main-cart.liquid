@@ -15,7 +15,7 @@
         <div class="cart-container-item-image">
           <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
-        <div class="cart-container-item-info">
+        <div class="cart-container-item-info flex">
           <h4>{{ item.title }}</h4>
           <h6>{{ item.quantity }} x {{ item.price | money }}</h6>
           {% assign total_amount_cart = item.quantity | times: item.price | money %}
