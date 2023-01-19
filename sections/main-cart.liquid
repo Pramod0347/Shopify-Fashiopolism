@@ -17,9 +17,9 @@
         </div>
         <div class="cart-container-item-info">
           <h4>{{ item.title }}</h4>
-          <p>{{ item.quantity }} x {{ item.price | money }}</p>
+          <h6>{{ item.quantity }} x {{ item.price | money }}</h6>
           {% assign total_amount_cart = item.quantity | times: item.price | money %}
-          <p>{{ total_amount_cart }}</p>
+          <h6>{{ total_amount_cart }}</h6>
         </div>
         <div class="cart-container-item-remove">
           <a href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">Remove Item</a>
