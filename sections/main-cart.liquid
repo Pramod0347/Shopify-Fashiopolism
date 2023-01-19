@@ -27,7 +27,7 @@
           <p>{{ item.quantity }} x {{ item.price | money }}</p>
         </div>
         <div class="cart-container-item-remove">
-          <a href="{{ item.remove_url }}">Remove</a>
+          <a href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">Remove Item</a>
         </div>
       </div>
     {% endfor %}
