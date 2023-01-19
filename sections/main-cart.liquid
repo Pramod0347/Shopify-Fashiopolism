@@ -17,7 +17,7 @@
           <img
             src="{{ item.image | image_url: width: 1500 }}"
             loading="lazy"
-            width="{{ item.title.width }}"
+            width="{{ item.title.width | divided_by: 2 }}"
             height="{{ item.title.width | divided_by: item.title.aspect_ratio | round }}"
             alt="{{ alt | default: item.title | escape }}"
           >
