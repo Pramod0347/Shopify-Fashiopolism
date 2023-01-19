@@ -14,13 +14,6 @@
       <div class="cart-container-item">
         <div class="cart-container-item-image">
           <!-- <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}"> -->
-          <img
-            src="{{ item.image | image_url: width: 1500 }}"
-            loading="lazy"
-            width="{{ item.title.width }}"
-            height="{{ item.title.width | divided_by: item.title.aspect_ratio | round }}"
-            alt="{{ alt | default: item.title | escape }}"
-          >
         </div>
         <div class="cart-container-item-info">
           <h4>{{ item.title }}</h4>
