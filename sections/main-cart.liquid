@@ -10,27 +10,46 @@
   </div>
   <div class="cart-container-items flex flex-column">
     {% for item in cart.items %}
-      <div class="cart-container-item flex">
-        <div class="cart-container-item-image">
-          <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
-        </div>
-        <div class="cart-container-item-info">
-          <h4>{{ item.title }}</h4>
-          <p>{{ item.quantity }} x {{ item.price | money }}</p>
-        </div>
-        <div class="quantity__flex">
-          <input
-            class="quantity__input"
-            type="number"
-            name="quantity"
-            min="1"
-            value="1"
-          >
-        </div>
-        <div class="cart-container-item-remove">
-          <a href="{{ item.remove_url }}">Remove</a>
-        </div>
-      </div>
+      <form action="/cart" method="post">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.price | money }}</td>
+                <td>
+                  <input type="number" name="updates[]" value="{{ item.quantity }}">
+                  <input type="hidden" name="id[]" value="{{ item.key }}">
+                </td>
+                <td>{{ item.price | times: item.quantity | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Subtotal</td>
+              <td>{{ cart.subtotal_price | money }}</td>
+            </tr>
+            <tr>
+              <td colspan="3">Shipping</td>
+              <td>{{ cart.shipping_rate.price | money }}</td>
+            </tr>
+            <tr>
+              <td colspan="3">Total</td>
+              <td>{{ cart.total_price | money }}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <input type="submit" value="Update Cart">
+      </form>
     {% endfor %}
   </div>
   <div class="cart-container-amount flex center justify-center">
