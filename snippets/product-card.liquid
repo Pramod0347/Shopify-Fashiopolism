@@ -103,15 +103,15 @@
   </div>
   <div class="product-card__button center">
     {% if current_variant.available %}
-      <button type="submit" class="button button--primary button--full-width card_button">Add to cart</button>
+      <a type="submit" class="button button--primary button--full-width card_button">Add to cart</a>
     {% else %}
-      <button
+      <a
         type="button"
         class="button button--primary button--full-width"
         disabled
       >
         Soldout
-      </button>
+      </a>
     {% endif %}
   </div>
 
