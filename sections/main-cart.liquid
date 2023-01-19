@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<script>
+{% javascript %}
   function removeFromCart(id) {
     var quantityInput = document.createElement('input');
     quantityInput.setAttribute('type', 'hidden');
@@ -62,4 +62,4 @@
     form.appendChild(idInput);
     form.submit();
   }
-</script>
+{% endjavascript %}
