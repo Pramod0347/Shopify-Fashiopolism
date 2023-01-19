@@ -28,7 +28,7 @@
             <td>{{ item.product.title }}</td>
             <td>{{ item.quantity }}</td>
             {% assign total_amount_cart = item.quantity | times: item.price | money %}
-            <td>{{ total_amount_cart | money }}</td>
+            <td>{{ item.price | money }}</td>
           </tr>
         {% endfor %}
       </tbody>
