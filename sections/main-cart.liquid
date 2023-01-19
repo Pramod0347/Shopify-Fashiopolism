@@ -11,7 +11,7 @@
   </div>
   <div class="cart-container-items flex">
     {% for item in cart.items %}
-      <div class="cart-container-item">
+      <div class="cart-container-item flex">
         <div class="cart-container-item-image">
           <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
