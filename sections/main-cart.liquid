@@ -27,7 +27,7 @@
           <p>{{ item.quantity }} x {{ item.price | money }}</p>
         </div>
         <div class="cart-container-item-remove">
-          <a href="#" onclick="removeFromCart({{ item.id }}); return false;">Remove</a>
+          <a href="{{ item.remove_url }}">Remove</a>
         </div>
       </div>
     {% endfor %}
@@ -42,24 +42,3 @@
     </div>
   </div>
 </div>
-
-{% javascript %}
-  function removeFromCart(id) {
-    var quantityInput = document.createElement('input');
-    quantityInput.setAttribute('type', 'hidden');
-    quantityInput.setAttribute('name', 'quantity');
-    quantityInput.setAttribute('value', '0');
-
-    var idInput = document.createElement('input');
-    idInput.setAttribute('type', 'hidden');
-    idInput.setAttribute('name', 'id');
-    idInput.setAttribute('value', id);
-
-    var form = document.createElement('form');
-    form.setAttribute('method', 'post');
-    form.setAttribute('action', '/cart/change');
-    form.appendChild(quantityInput);
-    form.appendChild(idInput);
-    form.submit();
-  }
-{% endjavascript %}
