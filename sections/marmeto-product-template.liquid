@@ -116,7 +116,7 @@
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
 
                   <div class="product__form-buttons">
-                    <a
+                    <button
                       type="submit"
                       name="add"
                       class="product__form-button"
@@ -131,7 +131,7 @@
                           SOLD OUT
                         {%- endif -%}
                       </span>
-                    </a>
+                    </button>
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
                     {%- endif -%}
