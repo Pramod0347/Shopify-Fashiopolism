@@ -13,7 +13,7 @@
     {% for item in cart.items %}
       <div class="cart-container-item">
         <div class="cart-container-item-image">
-          <!-- <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}"> -->
+          <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}">
         </div>
         <div class="cart-container-item-info">
           <h4>{{ item.title }}</h4>
