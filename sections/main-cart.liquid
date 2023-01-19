@@ -11,9 +11,9 @@
   </div>
   <div class="cart-container-items flex flex-column ">
     {% for item in cart.items %}
-      <div class="cart-container-item">
+      <div class="cart-container-item flex flex-column">
         <div class="cart-container-item-image">
-          <!-- <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}"> -->
+          <!-- <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}"> -->
           <img
             src="{{ item.image | image_url: width: 1500 }}"
             loading="lazy"
