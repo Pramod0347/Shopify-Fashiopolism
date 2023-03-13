@@ -2,6 +2,7 @@
 {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
 <script src="{{ 'marmeto-product.js' | asset_url }}" defer="defer"></script>
+{% render 'breadcrumb' %}
 <div class="product product-flex">
   <div class="product-flexitem product-flexitem-images">
     <div class="product__media-list">
