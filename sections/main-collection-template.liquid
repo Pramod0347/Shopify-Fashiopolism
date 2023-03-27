@@ -18,6 +18,7 @@
 <div class="main-collection-template section-{{ section.id }}-padding">
   {% assign product_limit = section.settings.product_per_page %}
   {% paginate collection.products by product_limit %}
+    {% render 'breadcrumb' %}
     <div class="page-width main-collection">
       <div class="main-collection__page-width flex flex-wrap" id="ProductGridContainer">
         {%- if collection.products.size == 0 -%}
