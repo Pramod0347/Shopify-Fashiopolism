@@ -48,7 +48,7 @@
 
     {{ content_for_header }}
 
-    {% include 'ajaxcart' %}
+   
     {{ 'shopify-header.js' | asset_url | script_tag }}
     {{ 'flickity.css' | asset_url | stylesheet_tag }}
     {{ 'flickity.js' | asset_url | | script_tag }}
@@ -149,7 +149,7 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     {% sections 'header-group' %}
-
+    {% section 'ajaxcart' %}
     <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
